@@ -7,12 +7,12 @@
         <img class="removeForm-img" src="https://png.pngtree.com/png-clipart/20190517/original/pngtree-vector-cross-icon-png-image_4267399.jpg" alt="" @click="removeTodo(index)">
       </div>
     </div>
-    <img class="addForm-img" src="https://i.pinimg.com/474x/a5/6d/35/a56d3517bb1323832680fbe7eb342da0.jpg" alt="" @click="appearForm">
+    <img class="addForm-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQupKxBOXvQZjiLc4OO7qkCq4ZH3bgIg0xjPxi9nolwKUcBgxXEEbmg4anrlkDokpNYEhs&usqp=CAU" alt="" @click="appearForm">
     <div class="form-container" v-if="status==='default'"  @offForm="offForm">
     <input type="text" v-model="message">
         <div class="two-button">
             <button class="cancel-button" @click="offForm">Cancel</button>
-            <button class="add-button" @click="addTodo">Add Todo</button> 
+            <button class="add-button" @click="addTodo"> Add work</button> 
         </div>
    </div>
   </div>
@@ -32,13 +32,6 @@
     },
     mounted(){
       //lấy dữ liệu từ api trả về
-      // const todoData=ref([
-      //     {
-      //       id:'',
-      //       title:'',
-      //       completed:''
-      //     }
-      //   ])
       const getTodo= async ()=>{
           try {
             const res=await axios.get('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5&_delay=3000')
@@ -104,7 +97,7 @@
 .todo-container{
   width:600px;
   height:100%;
-  margin-left:27%;
+  margin:auto;
   border:solid 2px black;
   align-items: center;
   align-content: center;
@@ -128,9 +121,10 @@
 .addForm-img{
   width:50px;
   height:50px;
+  margin-top:10px;
 }
 .removeForm-img{
-  position:absolute;
+
   left:73%;
   margin-top:17px;
   width:  20px;
@@ -167,7 +161,7 @@ input{
     background-color: #1ba1e2;
     color:white;
     border-radius: 10px;
-    padding:10px;
+    padding:10px  10px;
 }
 .add-button:hover{
     cursor: pointer;
